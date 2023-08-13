@@ -1,0 +1,70 @@
+:root {
+  --cerah: #75c2f6;
+  --mendung: #4f709c;
+  --gelap: #313866;
+  --bg: #ececec;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+}
+
+/* Navbar */
+.navbar-nav {
+  display: flex;
+  justify-content: center; /* Mengatur posisi horizontal di tengah */
+  align-items: center; /* Mengatur posisi vertikal di tengah */
+  flex-grow: 1; /* Menggunakan ruang yang tersedia */
+}
+
+.navbar-nav a {
+  margin: 0 1rem; /* Memberikan jarak antar elemen */
+}
+
+.navbar-nav a {
+  /* color:var(--cerah); */
+  display: inline-block;
+  font-size: 1.1rem;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+
+.navbar-nav a:hover {
+  color: var(--gelap);
+}
+
+
+.navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--mendung);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Modal */
+.modal .modal-dialog .modal-content .modal-body #title{
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.modal .modal-dialog .modal-content .modal-body .form-group{
+    margin-bottom: 0.5rem;
+}
