@@ -17,8 +17,10 @@ if (isset($_POST["login"])) {
         // cek password
         $data = mysqli_fetch_assoc($result);
         if(password_verify($password, $data["password"])){
-            header("Location: admin/dashboard.php");
+            header("Location: ../admin/dashboard.php");
             exit;
         }
     }
 }
+?>
+
