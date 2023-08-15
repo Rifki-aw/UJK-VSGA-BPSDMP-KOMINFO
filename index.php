@@ -125,7 +125,7 @@ if (isset($_POST["login"])) {
             <div class="row">
                 <!-- Product 1 -->
                 <?php
-                $query = "SELECT * FROM kegiatan";
+                $query = "SELECT * FROM kegiatan ORDER BY timestamp DESC";
                 $result = mysqli_query(connection(), $query);
                 while ($row = mysqli_fetch_assoc($result)) :
                 ?>
@@ -135,7 +135,7 @@ if (isset($_POST["login"])) {
                         </div>
                         <div class="product-content">
                             <h3><?php echo $row['judul']; ?></h3>
-                            <div class="product-price"><?php echo $row['keterangan']; ?></div>
+                            <div class="product-price keterangan"><?php echo $row['keterangan']; ?></div>
                             <div class="product-price">
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#productModal-<?php echo $row['id']; ?>">Baca lebih lanjut >> </a>
                             </div>
@@ -162,29 +162,45 @@ if (isset($_POST["login"])) {
         </section>
         <!-- Product Section End -->
 
+    </main>
+
+    <footer>
         <!-- Abouut Section Start -->
         <section id="about" class="about">
-            <h2><span>About</span> Us</h2>
-            <div class="row">
-                <div class="content">
-                    <h3>Balai Pengembangan Sumber Daya Manusia dan Penelitian Komunikasi dan Informatika Surabaya
-                        Badan Penelitian dan Pengembangan Sumber Daya Manusia - Kementerian Komunikasi dan Informatika Republik Indonesia</h3>
-                    <p>
-                        Alamat: Jl. Raya Ketajen No.36, Ketajen, Kec. Gedangan, Kabupaten Sidoarjo, Jawa Timur 61254
-                    </p>
-                    <p>
-                        Telepon: (031) 8011944
-                    </p>
-                    <p>
-                        Provinsi: Jawa Timur
-                    </p>
+            <h2>Tentang<span> Kami</span></h2>
+            <div class="container">
+                <div class="row">
+                    <div class="content col-lg-6">
+                        <h3>Balai Pengembangan Sumber Daya Manusia dan Penelitian Komunikasi dan Informatika Surabaya</h3>
+                        <h3>Badan Penelitian dan Pengembangan Sumber Daya Manusia - Kementerian Komunikasi dan Informatika Republik Indonesia</h3>
+                    </div>
+                    <div class="content col-lg-6">
+                        <p>
+                            <i class='bx bx-buildings bx-sm'></i>
+                            Jl. Raya Ketajen No.36, Ketajen, Kec. Gedangan, Kabupaten Sidoarjo, Jawa Timur 61254
+                        </p>
+
+                        <p>
+                            <i class='bx bx-phone bx-sm'></i>
+                            (031) 8011944
+                        </p>
+                        <p>
+                            <i class='bx bxs-map bx-sm'></i>
+                            Jawa Timur
+                        </p>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-12 text-center">
+                        <div class="credit">
+                            <p>Created by <a href="#about">Muhammad Rifki Bahrul Ulum</a>. &copy; 2023.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
         <!-- Abouut Section End -->
-    </main>
 
-    <footer>
         <!-- Modal Login Start -->
         <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-sm">
@@ -234,7 +250,7 @@ if (isset($_POST["login"])) {
 
             // Loop melalui semua elemen dengan class .product-content
             productContents.forEach(function(content) {
-                var maxChar = 100; // Jumlah karakter maksimal sebelum ditampilkan ...
+                var maxChar = 200; // Jumlah karakter maksimal sebelum ditampilkan ...
                 var text = content.textContent.trim();
 
                 // Cek apakah teks terlalu panjang
