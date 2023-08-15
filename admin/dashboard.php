@@ -44,7 +44,7 @@ require_once('../inc/inc_conn.php');
 
 <body>
   <!-- Sidebar Start -->
-  <div class="sidebar">
+  <div class="sidebar close">
     <div class="logo">
       <img src="../resources/logo_BPSDMP.png" alt="" width="50" height="50" class="d-inline-block align-text-top" />
       <div class="logo-name"><span> BPSDMP </span>Kominfo</div>
@@ -63,7 +63,9 @@ require_once('../inc/inc_conn.php');
   <!-- Sidebar End -->
   <div class="content">
     <nav>
-      <i class="bx bx-menu"></i>
+      <div class="sidebar-toggle" id="sidebar-toggle">
+        <i class="bx bx-menu"></i>
+      </div>
     </nav>
     <main>
       <!-- Header Start -->

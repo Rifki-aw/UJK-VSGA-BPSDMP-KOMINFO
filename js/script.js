@@ -13,11 +13,18 @@ sideLinks.forEach((item) => {
 });
 
 const menuBar = document.querySelector(".content nav .bx.bx-menu");
+const sidebarToggle = document.getElementById("sidebar-toggle");
 const sideBar = document.querySelector(".sidebar");
 
-menuBar.addEventListener("click", () => {
+sidebarToggle.addEventListener("click", () => {
   sideBar.classList.toggle("close");
 });
+
+// Event listener tambahan untuk menutup sidebar saat halaman dimuat
+window.addEventListener("load", () => {
+  sideBar.classList.add("close");
+});
+
 
 // Edit Data
 // function editInput(row) {
