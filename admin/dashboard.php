@@ -253,7 +253,6 @@ require_once('../inc/inc_conn.php');
 
     <script>
       $(document).ready(function() {
-        // Initialize DataTable with paging options
         $("#data-table").DataTable({
           paging: true,
           lengthChange: false,
@@ -261,7 +260,7 @@ require_once('../inc/inc_conn.php');
           ordering: true,
           info: true,
           autoWidth: false,
-          pageLength: 5, // Change the number of rows per page here (default is 10)
+          pageLength: 5,
         });
       });
     </script>
@@ -291,25 +290,6 @@ require_once('../inc/inc_conn.php');
         });
       });
     </script>
-
-    <!-- Summernote -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $("#keterangan").summernote({
-          placeholder: "Tambahkan keterangan kegiatan...",
-          height: 150,
-        });
-
-        $("#addForm").on("submit", function (event) {
-          // Ambil konten dari Summernote
-          var keteranganContent = $("#keterangan").summernote("code");
-          // Masukkan konten ke dalam input tersembunyi dalam form
-          $("#hiddenKeterangan").val(keteranganContent);
-        });
-      });
-    </script> -->
 </body>
 
 </html>

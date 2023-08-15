@@ -20,7 +20,7 @@ if (isset($_POST["login"])) {
 
     // cek username
     if (mysqli_num_rows($result) === 1) {
-        $data = mysqli_fetch_assoc($result); // Define $data even on successful login check
+        $data = mysqli_fetch_assoc($result);
         if (password_verify($password, $data["password"])) {
 
             // set session
@@ -280,9 +280,9 @@ if (isset($_POST["login"])) {
             document.addEventListener('DOMContentLoaded', function() {
                 var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
                 loginModal.show();
-                document.getElementById('username').focus(); // Focus on the input field
+                document.getElementById('username').focus()
 
-                // Show alert message inside the modal
+                // Tampilkan alert dalam modal
                 var alertDiv = document.createElement('div');
                 alertDiv.className = 'alert alert-danger';
                 alertDiv.textContent = 'Invalid username or password. Please try again.';
