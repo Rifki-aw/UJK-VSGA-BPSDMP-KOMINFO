@@ -1,11 +1,19 @@
 <?php
+session_start();
+
+if (!isset($_SESSION["login"])) {
+  header("Location: ../index.php");
+  exit;
+}
+
 require_once('../inc/inc_conn.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>VSGA BPSDMP - Admin</title>
+  <link rel="icon" href="../resources/logo_BPSDMP.png">
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -48,7 +56,7 @@ require_once('../inc/inc_conn.php');
     </ul>
     <ul class="side-menu">
       <li>
-        <a href="../index.php" class="logout"><i class="bx bx-log-out bx-fade-left-hover"></i>Log Out</a>
+        <a href="logout_admin.php" class="logout"><i class="bx bx-log-out bx-fade-left-hover"></i>Log Out</a>
       </li>
     </ul>
   </div>

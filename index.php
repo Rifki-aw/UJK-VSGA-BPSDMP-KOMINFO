@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (isset($_SESSION["login"])) {
+    header("Location: admin/dashboard.php");
+    exit;
+}
 
 include('inc/inc_conn.php');
 
@@ -16,6 +22,11 @@ if (isset($_POST["login"])) {
     if (mysqli_num_rows($result) === 1) {
         $data = mysqli_fetch_assoc($result); // Define $data even on successful login check
         if (password_verify($password, $data["password"])) {
+
+            // set session
+            $_SESSION["login"] = true;
+
+
             header("Location: admin/dashboard.php");
             exit;
         }
@@ -28,7 +39,8 @@ if (isset($_POST["login"])) {
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>VSGA BPSDMP - Home</title>
+    <link rel="icon" href="resources/logo_BPSDMP.png">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
